@@ -118,7 +118,12 @@ const Register = () => {
                 },
             });
             if (response.data.success) {
-                navigate('/thank-you');
+                setIsLoading(false);
+                navigate('/', { 
+                    state: { 
+                        message: 'Registration successful! Please login with your credentials.' 
+                    } 
+                });
             } else {
                 setError('Registration failed. Please try again.');
             }
